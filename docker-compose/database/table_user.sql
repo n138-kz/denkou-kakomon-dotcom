@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS users_twofactorcode;
 DROP TABLE IF EXISTS users_modfied_operation;
 DROP TABLE IF EXISTS users_deleted_operation;
 DROP TABLE IF EXISTS users;
@@ -55,4 +56,11 @@ CREATE TABLE IF NOT EXISTS users_deleted_operation (
 	operation_by text not null,
 	FOREIGN KEY (target) REFERENCES users (uuid),
 	FOREIGN KEY (operation_by) REFERENCES users (uuid)
+);
+
+CREATE TABLE IF NOT EXISTS users_twofactorcode (
+	uuid text primary key,
+	secret text not null,
+	recovery json not null default '[]',
+	FOREIGN KEY (uuid) REFERENCES users (uuid)
 );
