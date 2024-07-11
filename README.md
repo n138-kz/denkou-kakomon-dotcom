@@ -81,6 +81,12 @@ users_modfied_operation {
     refferecnce operation_by FK "[table] users: uuid"
 }
 
+users_twofactorcode {
+    refferecnce uuid PK "[table] users: uuid"
+    text secret
+    json recovery "default: []"
+}
+
 mondai {
     bigint uuid PK
     timestamp created_at
