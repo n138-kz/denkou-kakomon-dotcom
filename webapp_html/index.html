@@ -197,17 +197,19 @@
 		});
 	</script>
 	<style>
+		#wrap_side {
+			width: 150px;
+			z-index: 1;
+			text-align: center;
+		}
 		@media screen and (min-device-width: 480px) {
 			#wrap_side {
 				/* for big screen(i.e. pc) */
 				float: left;
 				height: 100%;
+				width: 200px;
+				margin: 0 auto;
 			}
-		}
-		#wrap_side {
-			width: 150px;
-			z-index: 1;
-			text-align: center;
 		}
 		#wrap_main {
 			margin-left: 150px;
