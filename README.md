@@ -25,14 +25,15 @@
 
 ```mermaid
 erDiagram
+Google_Client-verifyIdToken ||--o{ users: ""
 users ||--o{ roles: "" 
 mondai ||--o{ mondai_answered: "" 
 
-verifyIdToken {
+Google_Client-verifyIdToken {
     text iss "https://accounts.google.com"
     text azp "000000000000-aaaaaaaaaaaaaaaaaaaaaaaaaaaaacud.apps.googleusercontent.com"
     text aud "000000000000-aaaaaaaaaaaaaaaaaaaaaaaaaaaaacud.apps.googleusercontent.com"
-    text sub "ユーザ識別子"
+    text sub PK "ユーザ識別子"
     text email "メールアドレス"
     bool email_verified "true or false"
     int nbf
