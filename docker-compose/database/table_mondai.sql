@@ -41,5 +41,6 @@ CREATE TABLE IF NOT EXISTS mondai (
     mondai_binary JSON NOT NULL DEFAULT '[]',
     kaitou_text JSON NOT NULL DEFAULT '[]',
     kaitou_binary JSON NOT NULL DEFAULT '[]',
+	kotae TEXT NOT NULL,
 	FOREIGN KEY (category_uuid) REFERENCES mondai_category (uuid)
 );

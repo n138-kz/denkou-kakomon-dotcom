@@ -100,6 +100,7 @@ mondai {
     json mondai_binary "memo: base64 encode image"
     json kaitou_text
     json kaitou_binary
+    text kotae
 }
 
 mondai_category {
