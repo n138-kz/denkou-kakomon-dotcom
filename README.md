@@ -47,10 +47,10 @@ Google_Client-verifyIdToken {
 }
 
 users {
-    text uuid PK
-    text name
-    text email
-    text icon
+    text uuid PK "Google_Client-verifyIdToken: sub"
+    text name "Google_Client-verifyIdToken: name"
+    text email "Google_Client-verifyIdToken: email"
+    text icon "Google_Client-verifyIdToken: picture"
     timestamp created_at
     timestamp modfied_at
     timestamp deleted_at
