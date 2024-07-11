@@ -45,11 +45,32 @@
 				}
 			}, 1000);
 		}
+		function getMondaiAllCategory() {
+			document.querySelector('#selectCategory').innerHTML = '';
+			//fetch()
+			let r = [
+				{
+					uuid: '1-keisan',
+					name: '計算',
+					description: '計算問題(電気基礎)',
+					count: 0,
+				},
+			];
+			r.map((e1)=>{
+				let obj = [];
+				obj[0] = document.createElement('input');
+				obj[0].type = 'checkbox';
+				document.querySelector('#selectCategory').appendChild(obj[0]);
+			});
+		}
 	</script>
 	<script>
 		window.addEventListener('DOMContentLoaded', ()=>{
 			pageInit();
 			googleauthInit();
+			setTimeout(()=>{
+				getMondaiAllCategory();
+			}, 500);
 		});
 	</script>
 	<style>
@@ -73,6 +94,7 @@
 	</div>
 	<div id="wrap-main">
 		<h1 id="title"></h1>
+		<div id="selectCategory"></div>
 	</div>
 </body>
 </html>
