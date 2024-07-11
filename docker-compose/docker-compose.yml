@@ -30,6 +30,15 @@ services:
            source: ../etc/letsencrypt
            target: /etc/letsencrypt
       command: ["--version"]
+   dockerssl:
+      build: dockerssl/
+      volumes:
+         - type: bind
+           source: ../webapp_html/
+           target: /var/www/html
+         - type: bind
+           source: ../etc/ssl
+           target: /etc/ssl
    database_postgres:
       build: database/
       volumes:
