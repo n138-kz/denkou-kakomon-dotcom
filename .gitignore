@@ -17,3 +17,8 @@ build/
 *.exe
 *.msi
 *.jar
+
+# Secret value files
+*.env
+*.db
+*.sqlite
