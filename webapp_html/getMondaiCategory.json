@@ -1,0 +1,178 @@
+[
+  {
+    "uuid": 101,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "電気に関する基礎理論",
+    "description": "電気に関する基礎理論",
+    "genre": "第一種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 102,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "配電理論及び配線設計",
+    "description": "配電理論及び配線設計",
+    "genre": "第一種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 103,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "電気応用",
+    "description": "電気応用",
+    "genre": "第一種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 104,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "電気機器・蓄電池・配線器具・電気工事用の材料及び工具並びに受電設備",
+    "description": "電気機器・蓄電池・配線器具・電気工事用の材料及び工具並びに受電設備",
+    "genre": "第一種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 105,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "電気工事の施工方法",
+    "description": "電気工事の施工方法",
+    "genre": "第一種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 106,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "自家用電気工作物の検査方法",
+    "description": "自家用電気工作物の検査方法",
+    "genre": "第一種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 107,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "配線図",
+    "description": "配線図",
+    "genre": "第一種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 108,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "発電施設・送電施設及び変電施設の基礎的な構造及び特性",
+    "description": "発電施設・送電施設及び変電施設の基礎的な構造及び特性",
+    "genre": "第一種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 109,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "一般用電気工作物等及び自家用電気工作物の保安に関する法令",
+    "description": "一般用電気工作物等及び自家用電気工作物の保安に関する法令",
+    "genre": "第一種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 201,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "電気に関する基礎理論",
+    "description": "電気に関する基礎理論",
+    "genre": "第二種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 202,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "配電理論及び配線設計",
+    "description": "配電理論及び配線設計",
+    "genre": "第二種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 203,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "電気機器・配線器具並びに電気工事用の材料及び工具",
+    "description": "電気機器・配線器具並びに電気工事用の材料及び工具",
+    "genre": "第二種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 204,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "電気工事の施工方法",
+    "description": "電気工事の施工方法",
+    "genre": "第二種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 205,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "一般用電気工作物等の検査方法",
+    "description": "一般用電気工作物等の検査方法",
+    "genre": "第二種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 206,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "配線図",
+    "description": "配線図",
+    "genre": "第二種電気工事士",
+    "count": 1
+  },
+  {
+    "uuid": 207,
+    "created_at": 1720698130,
+    "modfied_at": 1720698130,
+    "deleted_at": 0,
+    "deleted": false,
+    "name": "一般用電気工作物等の保安に関する法令",
+    "description": "一般用電気工作物等の保安に関する法令",
+    "genre": "第二種電気工事士",
+    "count": 1
+  }
+]
