@@ -32,7 +32,8 @@ users_deleted_operation ||--o{ users: ""
 users_twofactorcode ||--o{ users: "" 
 mondai ||--o{ mondai_answered: "" 
 users ||--o{ mondai_answered: "" 
-mondai ||--o{ mondai_kaisetsu: "" 
+mondai ||--o{ mondai_kaisetsu: ""
+mondai ||--o{ mondai_category: ""
 
 Google_Client-verifyIdToken {
     text iss "https://accounts.google.com"
@@ -90,6 +91,7 @@ users_twofactorcode {
 
 mondai {
     bigint uuid PK
+    refferecnce category_uuid FK 
     timestamp created_at
     timestamp modfied_at
     timestamp deleted_at
@@ -98,6 +100,16 @@ mondai {
     json mondai_binary "memo: base64 encode image"
     json kaitou_text
     json kaitou_binary
+}
+
+mondai_category {
+    int uuid PK
+    timestamp created_at
+    timestamp modfied_at
+    timestamp deleted_at
+    boolean deleted "default: false"
+    text name
+    text description
 }
 
 mondai_answered {
