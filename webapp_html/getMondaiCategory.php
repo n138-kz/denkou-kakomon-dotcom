@@ -51,7 +51,7 @@ try {
 			$pdo->setAttribute(PDO::ATTR_TIMEOUT, 10);
 			$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 			
-			$sql = 'select *, 1 as count from mondai_category where deleted = false;';
+			$sql = 'select *, 1 as count from mondai_category where deleted = false order by uuid asc;';
 			$stm = $pdo -> prepare($sql);
 			$res = $stm -> execute();
 			if (!$res) {
