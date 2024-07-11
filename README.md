@@ -25,11 +25,38 @@
 
 ```mermaid
 erDiagram
+users ||--o{ roles: "" 
+mondai ||--o{ mondai_answered: "" 
+
 users {
     text uuid PK
-    text username
+    text name
+    text email
     timestamp created_at
     timestamp modfied_at
     timestamp deleted_at
+}
+
+roles {
+    int uuid PK
+    text name
+    text description
+}
+
+mondai {
+    bigint uuid PK
+    timestamp created_at
+    timestamp modfied_at
+    timestamp deleted_at
+    boolean deleted "default: false"
+    text mondai_text
+    json mondai_binary "memo: base64 encode image"
+    json kaitou_text
+    json kaitou_binary
+}
+
+mondai_answered {
+    timestamp created_at PK
+    refferecnce mondai_uuid FK
 }
 ```
