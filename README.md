@@ -27,6 +27,7 @@
 erDiagram
 Google_Client-verifyIdToken ||--o{ users: ""
 users ||--o{ roles: "" 
+users ||--o{ users_deleted_operation: "" 
 mondai ||--o{ mondai_answered: "" 
 users ||--o{ mondai_answered: "" 
 mondai ||--o{ mondai_kaisetsu: "" 
@@ -65,6 +66,11 @@ roles {
     int uuid PK
     text name
     text desc "description"
+}
+
+users_deleted_operation {
+    timestamp deleted_at PK
+    refferecnce user_uuid FK "[table] users: uuid"
 }
 
 mondai {
