@@ -20,3 +20,16 @@
 
 [![License MIT](https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg)](LICENSE)  
 [Copyright (c) 2024 Yuu Komiya (n138)](LICENSE)  
+
+## Database E-R
+
+```mermaid
+erDiagram
+users {
+    text uuid PK
+    text username
+    timestamp created_at
+    timestamp modfied_at
+    timestamp deleted_at
+}
+```
