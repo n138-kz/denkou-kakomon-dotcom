@@ -11,6 +11,19 @@
 		function pageInit() {
 			document.querySelector('h1#title').innerText = document.title.replace(/ ?\|.*/, '').trim();
 		}
+		function getCurrentTime() {
+			const CURRENT_DATE = new Date();
+			let datetime = [{}];
+			datetime[0] = {
+				hour:   ( '00'   + ( CURRENT_DATE.getHours()    ) ).substr(-2),
+				minute: ( '00'   + ( CURRENT_DATE.getMinutes()  ) ).substr(-2),
+				second: ( '00'   + ( CURRENT_DATE.getSeconds()  ) ).substr(-2),
+				month:  ( '00'   + ( CURRENT_DATE.getMonth()+1  ) ).substr(-2),
+				date:   ( '00'   + ( CURRENT_DATE.getDate()     ) ).substr(-2),
+				year:   ( '0000' + ( CURRENT_DATE.getFullYear() ) ).substr(-2),
+			}
+			return datetime;
+		}
 		function googleauthInit() {
 			let interval = setInterval(()=>{
 				let g_id_signin = document.querySelectorAll('.g_id_signin_onload');
