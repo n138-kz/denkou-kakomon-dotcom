@@ -11,10 +11,45 @@
 		function pageInit() {
 			document.querySelector('h1#title').innerText = document.title.replace(/ ?\|.*/, '').trim();
 		}
+		function googleauthInit() {
+			let interval = setInterval(()=>{
+				let g_id_signin = document.querySelectorAll('.g_id_signin_onload');
+				try { Array.from(g_id_signin).map(e=>e.remove()); } catch (error) {}
+				g_id_signin = document.createElement('div');
+				g_id_signin.classList.add('div_button');
+				g_id_signin.classList.add('g_id_signin');
+				g_id_signin.classList.add('g_id_signin_onload');
+				g_id_signin.dataset.type = 'standard';
+				g_id_signin.dataset.shape = 'rectangular';
+				g_id_signin.dataset.theme = 'outline';
+				g_id_signin.dataset.text = 'signin_with';
+				g_id_signin.dataset.size = 'large';
+				g_id_signin.dataset.logo_alignment = 'left';
+				document.querySelector('#wrap_side').appendChild(g_id_signin);
+	
+				let g_id_onload = document.querySelector('#g_id_onload');
+				try { g_id_onload.remove(); } catch (error) {}
+				g_id_onload = document.createElement('div');
+				g_id_onload.id = 'g_id_onload';
+				g_id_onload.dataset.client_id = '784669840257-i0a06p3o6g8k0k1tk26jj09li1q2acud.apps.googleusercontent.com';
+				g_id_onload.dataset.context='signin';
+				g_id_onload.dataset.login_uri = location.origin;
+				g_id_onload.dataset.login_uri = 'n138-kz.github.io';
+				g_id_onload.dataset.callback = 'onSignIn';
+				g_id_onload.dataset.ux_mode='popup';
+				g_id_onload.dataset.auto_select='true';
+				g_id_onload.dataset.itp_support='true';
+				document.querySelector('#wrap_side').appendChild(g_id_onload);
+				if ( ( document.querySelectorAll('.g_id_signin iframe').length > 0 ) ) {
+					clearInterval(interval);
+				}
+			}, 1000);
+		}
 	</script>
 	<script>
 		window.addEventListener('DOMContentLoaded', ()=>{
 			pageInit();
+			googleauthInit();
 		});
 	</script>
 	<style>
