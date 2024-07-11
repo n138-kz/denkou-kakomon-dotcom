@@ -21,6 +21,10 @@
 [![License MIT](https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg)](LICENSE)  
 [Copyright (c) 2024 Yuu Komiya (n138)](LICENSE)  
 
+## Github pages
+
+[webapp_html](webapp_html)
+
 ## Database E-R Diagram
 
 ```mermaid
