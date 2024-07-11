@@ -23,11 +23,12 @@
 
 ## Database E-R
 
+### ユーザ管理
+
 ```mermaid
 erDiagram
 Google_Client-verifyIdToken ||--o{ users: ""
 users ||--o{ roles: "" 
-mondai ||--o{ mondai_answered: "" 
 
 Google_Client-verifyIdToken {
     text iss "https://accounts.google.com"
@@ -63,6 +64,14 @@ roles {
     text name
     text desc "description"
 }
+```
+
+### 問題集管理
+
+```mermaid
+erDiagram
+
+mondai ||--o{ mondai_answered: "" 
 
 mondai {
     bigint uuid PK
