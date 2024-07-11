@@ -21,7 +21,7 @@
 [![License MIT](https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg)](LICENSE)  
 [Copyright (c) 2024 Yuu Komiya (n138)](LICENSE)  
 
-## Database E-R
+## Database E-R Diagram
 
 ```mermaid
 erDiagram
