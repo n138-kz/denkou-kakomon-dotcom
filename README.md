@@ -69,8 +69,15 @@ roles {
 }
 
 users_deleted_operation {
-    timestamp deleted_at PK
-    refferecnce user_uuid FK "[table] users: uuid"
+    timestamp event_at PK
+    refferecnce target FK "[table] users: uuid"
+    refferecnce operation_by FK "[table] users: uuid"
+}
+
+users_modfied_operation {
+    timestamp event_at PK
+    refferecnce target FK "[table] users: uuid"
+    refferecnce operation_by FK "[table] users: uuid"
 }
 
 mondai {
