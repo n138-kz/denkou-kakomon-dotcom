@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS mondai_category;
 DROP TABLE IF EXISTS mondai;
+DROP TABLE IF EXISTS mondai_category;
 
 CREATE TABLE IF NOT EXISTS mondai_category (
     "uuid" INT PRIMARY KEY,
