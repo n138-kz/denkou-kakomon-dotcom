@@ -110,6 +110,7 @@ mondai_category {
     boolean deleted "default: false"
     text name
     text description
+    text genre
 }
 
 mondai_answered {
