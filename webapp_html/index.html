@@ -95,6 +95,7 @@
 			r.map((e1)=>{
 				let obj = [];
 				obj[0] = document.createElement('label');
+				obj[0].classList.add('focus_pointer')
 
 				obj[1] = document.createElement('input');
 				obj[1].type = 'checkbox';
@@ -126,6 +127,10 @@
 			list-style-type: none;
 			list-style-position: outside;
 			margin: 0;
+		}
+		.focus_pointer {
+			cursor: pointer;
+			user-select: none;
 		}
 	</style>
 </head>
