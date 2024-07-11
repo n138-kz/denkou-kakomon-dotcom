@@ -21,7 +21,7 @@
 [![License MIT](https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg)](LICENSE)  
 [Copyright (c) 2024 Yuu Komiya (n138)](LICENSE)  
 
-## Database E-R
+## Database E-R Diagram
 
 ```mermaid
 erDiagram
@@ -85,6 +85,7 @@ users_modfied_operation {
 users_twofactorcode {
     refferecnce uuid PK "[table] users: uuid"
     text secret
+    json trusted_source "default: []"
     json recovery "default: []"
 }
 
