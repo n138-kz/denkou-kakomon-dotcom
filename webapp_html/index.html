@@ -24,6 +24,10 @@
 			}
 			return datetime;
 		}
+		function setMenuBarCURRENTDATE(params) {
+			params.hour = parseInt(params.hour);
+			document.querySelector('#current_datetime').innerHTML  = `${params.hour}:${params.minute}:${params.second}`;
+		}
 		function googleauthInit() {
 			let interval = setInterval(()=>{
 				let g_id_signin = document.querySelectorAll('.g_id_signin_onload');
