@@ -13,10 +13,23 @@ services:
          - type: bind
            source: ../webapp_html/
            target: /var/www/html
+         - type: bind
+           source: ../etc/letsencrypt
+           target: /etc/letsencrypt
       restart: unless-stopped
       networks:
          - frontend_bridge
          - database_network_default
+   certbot:
+      image: certbot/certbot:v1.7.0
+      volumes:
+         - type: bind
+           source: ../webapp_html/
+           target: /var/www/html
+         - type: bind
+           source: ../etc/letsencrypt
+           target: /etc/letsencrypt
+      command: ["--version"]
    database_postgres:
       build: database/
       volumes:
