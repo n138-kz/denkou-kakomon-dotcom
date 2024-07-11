@@ -5,6 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>電工過去問.com | n138.jp</title>
 	<link rel="stylesheet" href="master.css">
+	<script>
+		function pageInit() {
+			document.querySelector('h1#title').innerText = document.title.replace(/ ?\|.*/, '');
+		}
+	</script>
+	<script>
+		window.addEventListener('DOMContentLoaded', ()=>{
+			pageInit();
+		});
+	</script>
 </head>
 <body>
 </body>
