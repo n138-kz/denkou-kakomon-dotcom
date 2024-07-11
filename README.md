@@ -60,7 +60,7 @@ users {
 roles {
     int uuid PK
     text name
-    text description
+    text desc "description"
 }
 
 mondai {
