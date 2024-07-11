@@ -11,22 +11,22 @@ CREATE TABLE IF NOT EXISTS roles (
 );
 
 INSERT INTO roles VALUES
-    (0, '', ''),
-    (1, '', ''),
-    (2, '', ''),
-    (3, '', ''),
-    (4, '', ''),
-    (5, '', ''),
-    (6, '', ''),
-    (7, '', ''),
-    (8, '', ''),
-    (9, '', ''),
-    (10, '', ''),
-    (11, '', ''),
-    (12, '', ''),
-    (13, '', ''),
-    (14, '', ''),
-    (15, 'privilege', 'Privilege permission');
+    (0, 'level-00', 'level-00'),
+    (1, 'level-01', 'level-01'),
+    (2, 'level-02', 'level-02'),
+    (3, 'level-03', 'level-03'),
+    (4, 'level-04', 'level-04'),
+    (5, 'level-05', 'level-05'),
+    (6, 'level-06', 'level-06'),
+    (7, 'level-07', 'level-07'),
+    (8, 'level-08', 'level-08'),
+    (9, 'level-09', 'level-09'),
+    (10, 'level-10', 'level-10'),
+    (11, 'level-11', 'level-11'),
+    (12, 'level-12', 'level-12'),
+    (13, 'level-13', 'level-13'),
+    (14, 'level-14', 'level-14'),
+    (15, 'privil15ege', 'Privilege permission');
 
 CREATE TABLE IF NOT EXISTS users (
 	uuid TEXT PRIMARY KEY,
