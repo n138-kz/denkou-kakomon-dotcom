@@ -7,6 +7,10 @@ backup/
 *.tmp
 *.dat
 
+# Shortcut link files
+*.lnk
+*.url
+
 # Builded files
 Build/
 build/
