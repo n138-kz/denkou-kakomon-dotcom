@@ -27,6 +27,7 @@
 erDiagram
 Google_Client-verifyIdToken ||--o{ users: ""
 users ||--o{ roles: "" 
+users ||--o{ users_modfied_operation: "" 
 users ||--o{ users_deleted_operation: "" 
 mondai ||--o{ mondai_answered: "" 
 users ||--o{ mondai_answered: "" 
