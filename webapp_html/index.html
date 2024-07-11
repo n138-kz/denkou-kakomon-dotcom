@@ -64,64 +64,42 @@
 		}
 		function getMondaiAllCategory() {
 			document.querySelector('#selectCategory').innerHTML = '';
-			//fetch()
-			let r = [
-				{
-					uuid: '201',
-					name: '計算',
-					description: '電気に関する基礎理論',
-					count: 0,
-				},
-				{
-					uuid: '202',
-					name: '計算',
-					description: '配電理論及び配線設計',
-					count: 0,
-				},
-				{
-					uuid: '203',
-					name: '計算',
-					description: '電気機器・配線器具並びに電気工事用の材料及び工具',
-					count: 0,
-				},
-				{
-					uuid: '204',
-					name: '計算',
-					description: '電気工事の施工方法',
-					count: 0,
-				},
-				{
-					uuid: '205',
-					name: '計算',
-					description: '一般用電気工作物等の検査方法',
-					count: 0,
-				},
-				{
-					uuid: '206',
-					name: '計算',
-					description: '配線図',
-					count: 0,
-				},
-				{
-					uuid: '207',
-					name: '計算',
-					description: '一般用電気工作物等の保安に関する法令',
-					count: 0,
-				},
-			];
-			r.map((e1)=>{
-				let obj = [];
-				obj[0] = document.createElement('label');
-				obj[0].classList.add('focus_pointer')
-
-				obj[1] = document.createElement('input');
-				obj[1].type = 'checkbox';
-				obj[1].name = e1.uuid;
-				obj[0].appendChild(obj[1]);
-				obj[1] = document.createTextNode(`${e1.name} (${e1.count})`);
-				obj[0].appendChild(obj[1]);
-
-				document.querySelector('#selectCategory').appendChild(obj[0]);
+			fetch('./getMondaiCategory.json', {
+				method: 'get',
+			})
+			.then(r=>r.json())
+			.then(r=>{console.log(r); return r;})
+			.then(r=>{
+				console.log(r);
+				totalCount = 0;
+				r.map((e1)=>{
+					let obj = [];
+					obj[0] = document.createElement('label');
+					obj[0].classList.add('focus_pointer')
+	
+					obj[1] = document.createElement('input');
+					obj[1].type = 'checkbox';
+					obj[1].name = e1.uuid;
+					totalCount += e1.count;
+					obj[1].dataset.count = e1.count;
+					obj[1].checked = true;
+					obj[0].appendChild(obj[1]);
+	
+					obj[1] = document.createTextNode(`${e1.uuid} ${e1.genre} ${e1.name} (${e1.count})`);
+					obj[0].appendChild(obj[1]);
+	
+					obj[1] = document.createElement('br');
+					obj[0].appendChild(obj[1]);
+	
+					document.querySelector('#selectCategory').appendChild(obj[0]);
+				});
+	
+				initMondaiCount(totalCount);
+			})
+			.catch(r=>{
+				console.error(r);
+			})
+		}
 			});
 		}
 	</script>
