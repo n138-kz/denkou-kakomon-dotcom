@@ -125,6 +125,22 @@
 		}
 	</script>
 	<script>
+		let element = document.body;
+		window.addEventListener('DOMContentLoaded', ()=>{
+			element = document.querySelector('#selectCategory');
+			element.addEventListener('click', (e1)=>{
+				if ( e1.target.tagName.toLowerCase() === 'input' ) {
+					let selectCategoryCount = 0;
+					Array.from( document.querySelectorAll('#selectCategory input:checked') ).map((e2)=>{
+						selectCategoryCount += parseInt(e2.dataset.count);
+					});
+					document.querySelector('#selectMondaiTotalCount').innerText = selectCategoryCount;
+					console.log(selectCategoryCount);
+				}
+			});
+		});
+	</script>
+	<script>
 		window.addEventListener('DOMContentLoaded', ()=>{
 			pageInit();
 			googleauthInit();
