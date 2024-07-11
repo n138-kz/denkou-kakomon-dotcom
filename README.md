@@ -61,7 +61,6 @@ users {
     timestamp deleted_at
     bool online
     bool deleted 
-    serial nodeid
 }
 
 roles {

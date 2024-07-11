@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS users (
 	deleted_at INT DEFAULT EXTRACT(EPOCH FROM CURRENT_TIMESTAMP),
 	online bool DEFAULT true,
 	deleted bool DEFAULT false,
-	nodeid serial NOT NULL,
 	FOREIGN KEY (roles) REFERENCES roles (uuid)
 );
 
