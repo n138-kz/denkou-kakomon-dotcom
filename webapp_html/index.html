@@ -197,8 +197,13 @@
 		});
 	</script>
 	<style>
+		@media screen and (min-device-width: 480px) {
+			#wrap_side {
+				/* for big screen(i.e. pc) */
+				float: left;
+			}
+		}
 		#wrap_side {
-			float: left;
 			width: 150px;
 			z-index: 1;
 			height: 100%;
