@@ -84,7 +84,7 @@
 				method: 'get',
 			})
 			.then(r=>r.json())
-			.then(r=>{console.log(r); return r;})
+			.then(r=>{console.debug(r); return r;})
 			.then(r=>{
 				console.log(r);
 				totalCount = 0;
