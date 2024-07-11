@@ -32,9 +32,13 @@ users {
     text uuid PK
     text name
     text email
+    text icon
     timestamp created_at
     timestamp modfied_at
     timestamp deleted_at
+    bool online
+    bool deleted 
+    serial nodeid
 }
 
 roles {
