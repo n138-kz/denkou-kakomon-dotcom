@@ -85,6 +85,7 @@ users_modfied_operation {
 users_twofactorcode {
     refferecnce uuid PK "[table] users: uuid"
     text secret
+    json trusted_source "default: []"
     json recovery "default: []"
 }
 
