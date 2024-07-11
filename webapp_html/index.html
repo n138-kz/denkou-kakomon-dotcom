@@ -94,8 +94,15 @@
 			];
 			r.map((e1)=>{
 				let obj = [];
-				obj[0] = document.createElement('input');
-				obj[0].type = 'checkbox';
+				obj[0] = document.createElement('label');
+
+				obj[1] = document.createElement('input');
+				obj[1].type = 'checkbox';
+				obj[1].name = e1.uuid;
+				obj[0].appendChild(obj[1]);
+				obj[1] = document.createTextNode(`${e1.name} (${e1.count})`);
+				obj[0].appendChild(obj[1]);
+
 				document.querySelector('#selectCategory').appendChild(obj[0]);
 			});
 		}
