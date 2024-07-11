@@ -28,6 +28,22 @@ erDiagram
 users ||--o{ roles: "" 
 mondai ||--o{ mondai_answered: "" 
 
+verifyIdToken {
+    text iss "https://accounts.google.com"
+    text azp "000000000000-aaaaaaaaaaaaaaaaaaaaaaaaaaaaacud.apps.googleusercontent.com"
+    text aud "000000000000-aaaaaaaaaaaaaaaaaaaaaaaaaaaaacud.apps.googleusercontent.com"
+    text sub "ユーザ識別子"
+    text email "メールアドレス"
+    bool email_verified "true or false"
+    int nbf
+    text name "アカウント名"
+    text picture "アイコンURL"
+    text given_name "アカウント名"
+    timestamp iat "認証された時間"
+    timestamp exp "トークンの使用期限"
+    text jti
+}
+
 users {
     text uuid PK
     text name
