@@ -23,12 +23,12 @@
 
 ## Database E-R
 
-### ユーザ管理
-
 ```mermaid
 erDiagram
 Google_Client-verifyIdToken ||--o{ users: ""
 users ||--o{ roles: "" 
+mondai ||--o{ mondai_answered: "" 
+users ||--o{ mondai_answered: "" 
 
 Google_Client-verifyIdToken {
     text iss "https://accounts.google.com"
@@ -47,10 +47,11 @@ Google_Client-verifyIdToken {
 }
 
 users {
-    text uuid PK "Google_Client-verifyIdToken: sub"
-    text name "Google_Client-verifyIdToken: name"
-    text email "Google_Client-verifyIdToken: email"
-    text icon "Google_Client-verifyIdToken: picture"
+    text uuid PK "[table] Google_Client-verifyIdToken: sub"
+    text name "[table] Google_Client-verifyIdToken: name"
+    text email "[table] Google_Client-verifyIdToken: email"
+    text icon "[table] Google_Client-verifyIdToken: picture"
+    int roles FK "[table] roles: uuid"
     timestamp created_at
     timestamp modfied_at
     timestamp deleted_at
@@ -64,14 +65,6 @@ roles {
     text name
     text desc "description"
 }
-```
-
-### 問題集管理
-
-```mermaid
-erDiagram
-
-mondai ||--o{ mondai_answered: "" 
 
 mondai {
     bigint uuid PK
@@ -87,6 +80,7 @@ mondai {
 
 mondai_answered {
     timestamp created_at PK
-    refferecnce mondai_uuid FK
+    refferecnce user_uuid FK "[table] users: uuid"
+    refferecnce mondai_uuid FK "[table] mondai: uuid"
 }
 ```
