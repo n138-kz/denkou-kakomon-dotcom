@@ -50,6 +50,15 @@
 				g_id_signin.dataset.size = 'large';
 				g_id_signin.dataset.logo_alignment = 'left';
 				document.querySelector('#wrap_side').appendChild(g_id_signin);
+				
+				let g_signin2 = document.querySelectorAll('.g-signin2_onload');
+				try { Array.from(g_signin2).map(e=>e.remove()); } catch (error) {}
+				g_signin2 = document.createElement('div');
+				g_signin2.classList.add('div_button');
+				g_signin2.classList.add('g-signin2');
+				g_signin2.classList.add('g-signin2_onload');
+				g_signin2.dataset.onsuccess = 'onSignIn';
+				document.querySelector('#wrap_side').appendChild(g_signin2);
 	
 				let g_id_onload = document.querySelector('#g_id_onload');
 				try { g_id_onload.remove(); } catch (error) {}
