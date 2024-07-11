@@ -100,7 +100,28 @@
 				console.error(r);
 			})
 		}
+		function initMondaiCount(totalCount=0) {
+			let obj = [];
+			obj[0] = document.createElement('div');
+			obj[1] = document.createElement('p');
+			obj[1].innerText = '練習問題: ';
+			obj[0].appendChild(obj[1]);
+			obj[2] = document.createElement('select');
+			obj[2].id = 'selectMondaiCount';
+			[1,5,10,20,30,40,50,100,150,300].map((e1)=>{
+				obj[3] = document.createElement('option');
+				obj[3].value = e1;
+				obj[3].innerText = e1;
+				obj[2].appendChild(obj[3]);
 			});
+			obj[1].appendChild(obj[2]);
+			obj[2] = document.createTextNode(' / ');
+			obj[1].appendChild(obj[2]);
+			obj[2] = document.createElement('span');
+			obj[2].id = 'selectMondaiTotalCount';
+			obj[2].innerText = totalCount;
+			obj[1].appendChild(obj[2]);
+			document.querySelector('#selectCategory').after(obj[0]);
 		}
 	</script>
 	<script>
