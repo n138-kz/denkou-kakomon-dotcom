@@ -184,6 +184,15 @@
 			const digest = await crypto.subtle.digest(encode, uint8)
 			return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2,'0')).join('')
 		}
+		function insertFavicon() {
+			['icon', 'apple-touch-icon', 'favicon'].forEach((e)=>{
+				let favicon = document.createElement('link');
+				favicon.rel = `${e}`;
+				favicon.href = (location.origin) + '/lib/favicon.webp';
+				favicon.type = 'image/webp';
+				document.head.appendChild(favicon);
+			});
+		}
 	</script>
 	<script>
 		let element = document.body;
