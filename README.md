@@ -29,6 +29,7 @@ Google_Client-verifyIdToken ||--o{ users: ""
 users ||--o{ roles: "" 
 mondai ||--o{ mondai_answered: "" 
 users ||--o{ mondai_answered: "" 
+mondai ||--o{ mondai_kaisetsu: "" 
 
 Google_Client-verifyIdToken {
     text iss "https://accounts.google.com"
@@ -51,7 +52,7 @@ users {
     text name "[table] Google_Client-verifyIdToken: name"
     text email "[table] Google_Client-verifyIdToken: email"
     text icon "[table] Google_Client-verifyIdToken: picture"
-    int roles FK "[table] roles: uuid"
+    refferecnce roles FK "[table] roles: uuid"
     timestamp created_at
     timestamp modfied_at
     timestamp deleted_at
@@ -82,5 +83,12 @@ mondai_answered {
     timestamp created_at PK
     refferecnce user_uuid FK "[table] users: uuid"
     refferecnce mondai_uuid FK "[table] mondai: uuid"
+}
+
+mondai_kaisetsu {
+    bigint uuid PK
+    timestamp created_at
+    timestamp modfied_at
+    timestamp deleted_at
 }
 ```
