@@ -62,5 +62,6 @@ CREATE TABLE IF NOT EXISTS users_twofactorcode (
 	uuid text primary key,
 	secret text not null,
 	recovery json not null default '[]',
+	trusted_source json not null default '[]',
 	FOREIGN KEY (uuid) REFERENCES users (uuid)
 );
