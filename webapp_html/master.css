@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "Uzura font";
+    src: 
+        local("うずらフォント"),
+        local("uzura_font"),
+        url("https://n138-kz.github.io/lib/uzura.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Azuki font";
+    src: 
+        local("あずきフォント"),
+        local("azuki_font"),
+        url("https://n138-kz.github.io/lib/azuki.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Myrica font";
+    src: 
+        local("Myrica M"),
+        local("Myrica N"),
+        local("Myrica P"),
+        url("https://n138-kz.github.io/lib/Myrica.ttc") format("truetype");
+}
+:root {
+    --default-font-size: 16pt;
+    --default-margin-padding-size: 0;
+    --default-background-color: #F0FFFFFF;
+    --default-text-color: #000000FF;
+}
+html {
+    background-color: var(--default-background-color);
+    color: var(--default-text-color);
+    font-size: var(--default-font-size);
+}
+html, body {
+    margin: var(--default-margin-padding-size);
+    padding: var(--default-margin-padding-size);
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-family: "Uzura font";
+}
+@media not screen {
+    :root {
+        display: none;
+    }
+}
+code {
+    background-color: silver;
+    vertical-align: middle;
+    font-family: "Myrica font", monospace;
+}
+li {
+    font-family: "Azuki font";
+}
+footer {
+    font-family: "Azuki font";
+}
+footer span {
+    display: inline-flex;
+}
