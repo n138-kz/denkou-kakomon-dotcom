@@ -20,6 +20,22 @@
 			params.hour = parseInt(params.hour);
 			document.querySelector('#current_datetime').innerHTML  = `${params.hour}:${params.minute}:${params.second}`;
 		}
+		function setMenuBarPAGEHASH() {
+			fetch('./', {
+				method: 'get',
+			})
+			.then(r=>r.text())
+			.then(r=>{console.debug(r); return r;})
+			.then(r=>{
+				let params = hash_encode(r, 'SHA-1');
+
+				document.querySelector('#pages_hashtext').remove();
+				let obj = obj = document.createElement('div');
+				obj.id='pages_hashtext';
+				obj.innerText=`${params}`;
+				document.querySelector('#current_datetime').after(obj);
+			})
+		}
 		function onSignIn(googleUser) {
 			console.log(googleUser);
 		}
@@ -197,6 +213,7 @@
 			googleauthInit();
 			insertFavicon();
 			insertLastElement();
+			setMenuBarPAGEHASH();
 			setTimeout(()=>{
 				getMondaiAllCategory();
 			}, 500);
