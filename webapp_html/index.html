@@ -20,27 +20,6 @@
 			params.hour = parseInt(params.hour);
 			document.querySelector('#current_datetime').innerHTML  = `${params.hour}:${params.minute}:${params.second}`;
 		}
-		async function setMenuBarPAGEHASH() {
-			fetch('./', {
-				method: 'get',
-			})
-			.then(r=>r.text())
-			.then(r=>{
-				new Promise((resolve, reject)=>{
-					let params = hash_encode(r, 'SHA-1');
-
-					if (document.querySelector('#pages_hashtext') !== null) {
-						document.querySelector('#pages_hashtext').remove();
-					}
-					let obj = document.createElement('div');
-					obj.id='pages_hashtext';
-					obj.innerText=`${params}`;
-					document.querySelector('#current_datetime').after(obj);
-
-					resolve();
-				})
-			})
-		}
 		function onSignIn(googleUser) {
 			console.log(googleUser);
 		}
@@ -222,7 +201,6 @@
 			}, 500);
 			setInterval(() => {
 				setMenuBarCURRENTDATE( getCurrentTime()[0] );
-				setMenuBarPAGEHASH();
 			}, 100);
 		});
 	</script>
