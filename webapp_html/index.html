@@ -68,6 +68,18 @@
 		}
 	</script>
 	<script>
+		function setCategory_toggle(params=0) {
+			/*
+				all off : 0
+				denkou 1: 1
+				denkou 2: 2
+				all on  : 3
+			*/
+			try { Array.from( document.querySelectorAll('input[name^="1"]') ).map(e=>e.checked = false); } catch (error) {}
+			try { Array.from( document.querySelectorAll('input[name^="2"]') ).map(e=>e.checked = false); } catch (error) {}
+			if (params&&1==1) { try { Array.from( document.querySelectorAll('input[name^="1"]') ).map(e=>e.checked = true);  } catch (error) {} }
+			if (params&&2==2) { try { Array.from( document.querySelectorAll('input[name^="2"]') ).map(e=>e.checked = true);  } catch (error) {} }
+		}
 		function getMondaiAllCategory() {
 			document.querySelector('#selectCategory').innerHTML = '';
 			fetch('./getMondaiCategory.json', {
@@ -109,21 +121,25 @@
 				try { Array.from( document.querySelectorAll('input[name^="1"]') ).map(e=>e.checked = true);  } catch (error) {}
 				try { Array.from( document.querySelectorAll('input[name^="2"]') ).map(e=>e.checked = false); } catch (error) {}
 				*/
+				obj[0].setAttribute('click', 'setCategory_toggle(1)');
 				document.querySelector('#selectCategory').appendChild(obj[0]);
 				obj[0] = document.createElement('input');
 				obj[0].type = 'button';
 				obj[0].id = 'checkDebkou2allSelect';
 				obj[0].value = '第二種電気工事士のみ';
+				obj[0].setAttribute('click', 'setCategory_toggle(2)');
 				document.querySelector('#selectCategory').appendChild(obj[0]);
 				obj[0] = document.createElement('input');
 				obj[0].type = 'button';
 				obj[0].id = 'checkallSelect';
 				obj[0].value = '全選択';
+				obj[0].setAttribute('click', 'setCategory_toggle(3)');
 				document.querySelector('#selectCategory').appendChild(obj[0]);
 				obj[0] = document.createElement('input');
 				obj[0].type = 'button';
 				obj[0].id = 'checkallUnSelect';
 				obj[0].value = '全選択解除';
+				obj[0].setAttribute('click', 'setCategory_toggle(0)');
 				document.querySelector('#selectCategory').appendChild(obj[0]);
 	
 				initMondaiCount(totalCount);
