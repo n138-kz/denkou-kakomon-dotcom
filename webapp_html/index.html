@@ -59,7 +59,7 @@
 				g_id_signin.dataset.text = 'signin_with';
 				g_id_signin.dataset.size = 'large';
 				g_id_signin.dataset.logo_alignment = 'left';
-				document.querySelector('#wrap_side').appendChild(g_id_signin);
+				document.querySelector('#googleapi_identity_authn').appendChild(g_id_signin);
 				
 				let g_signin2 = document.querySelectorAll('.g-signin2_onload');
 				try { Array.from(g_signin2).map(e=>e.remove()); } catch (error) {}
@@ -68,7 +68,7 @@
 				g_signin2.classList.add('g-signin2');
 				g_signin2.classList.add('g-signin2_onload');
 				g_signin2.dataset.onsuccess = 'onSignIn';
-				document.querySelector('#wrap_side').appendChild(g_signin2);
+				document.querySelector('#googleapi_identity_authn').appendChild(g_signin2);
 	
 				let g_id_onload = document.querySelector('#g_id_onload');
 				try { g_id_onload.remove(); } catch (error) {}
@@ -82,7 +82,7 @@
 				g_id_onload.dataset.ux_mode='popup';
 				g_id_onload.dataset.auto_select='true';
 				g_id_onload.dataset.itp_support='true';
-				document.querySelector('#wrap_side').appendChild(g_id_onload);
+				document.querySelector('#googleapi_identity_authn').appendChild(g_id_onload);
 				if ( ( document.querySelectorAll('.g_id_signin iframe').length > 0 ) ) { clearInterval(interval); }
 			}, 1000);
 		}
@@ -256,10 +256,10 @@
 <body>
 	<div id="wrap_side">
 		<div id="current_datetime"></div>
-		<a href="">サインイン</a>
 	</div>
 	<div id="wrap_main">
 		<h1 id="title"></h1>
+		<div id="googleapi_identity_authn"></div>
 		<div id="selectCategory"></div>
 	</div>
 </body>
