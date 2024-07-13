@@ -6,6 +6,7 @@
 	<title>電工過去問.com | n138.jp</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="master.css">
+	<script src="master.js"></script>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script src="https://accounts.google.com/gsi/client" async defer></script>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LfCHdcUAAAAAOwkHsW_7W7MfoOrvoIw9CXdLRBA"></script>
@@ -14,19 +15,6 @@
 	<script async defer>
 		function pageInit() {
 			document.querySelector('h1#title').innerText = document.title.replace(/ ?\|.*/, '').trim();
-		}
-		function getCurrentTime() {
-			const CURRENT_DATE = new Date();
-			let datetime = [{}];
-			datetime[0] = {
-				hour:   ( '00'   + ( CURRENT_DATE.getHours()    ) ).substr(-2),
-				minute: ( '00'   + ( CURRENT_DATE.getMinutes()  ) ).substr(-2),
-				second: ( '00'   + ( CURRENT_DATE.getSeconds()  ) ).substr(-2),
-				month:  ( '00'   + ( CURRENT_DATE.getMonth()+1  ) ).substr(-2),
-				date:   ( '00'   + ( CURRENT_DATE.getDate()     ) ).substr(-2),
-				year:   ( '0000' + ( CURRENT_DATE.getFullYear() ) ).substr(-2),
-			}
-			return datetime;
 		}
 		function setMenuBarCURRENTDATE(params) {
 			params.hour = parseInt(params.hour);
@@ -167,41 +155,6 @@
 			obj[1].appendChild(obj[2]);
 			obj[0].appendChild(obj[1]);
 			document.querySelector('#selectCategory').after(obj[0]);
-		}
-		async function hash_encode(encode='SHA-256', text='') {
-			/**
-			* @docs
-				https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
-			* @args encode::text
-				- SHA-1
-				- *SHA-256
-				- SHA-384
-				- SHA-512
-			* @args text::text
-				.*
-			*/
-			const uint8  = new TextEncoder().encode(text)
-			const digest = await crypto.subtle.digest(encode, uint8)
-			return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2,'0')).join('')
-		}
-		function insertFavicon() {
-			['icon', 'apple-touch-icon', 'favicon'].forEach((e)=>{
-				let favicon = document.createElement('link');
-				favicon.rel = `${e}`;
-				favicon.href = (location.origin) + '/lib/favicon.webp';
-				favicon.type = 'image/webp';
-				document.head.appendChild(favicon);
-			});
-		}
-		function insertLastElement() {
-			const domLastElement = document.createElement('div');
-			domLastElement.id='lastElement';
-			domLastElement.style.height="150px";
-			Array.from( document.querySelectorAll( '#' + domLastElement.id ) ).map( (item)=>{
-				console.debug(item);
-				item.remove();
-			} )
-			document.body.appendChild(domLastElement);
 		}
 	</script>
 	<script>
