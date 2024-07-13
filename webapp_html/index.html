@@ -215,12 +215,12 @@
 			googleauthInit();
 			insertFavicon();
 			insertLastElement();
-			setMenuBarPAGEHASH();
 			setTimeout(()=>{
 				getMondaiAllCategory();
 			}, 500);
 			setInterval(() => {
 				setMenuBarCURRENTDATE( getCurrentTime()[0] );
+				setMenuBarPAGEHASH();
 			}, 100);
 		});
 	</script>
