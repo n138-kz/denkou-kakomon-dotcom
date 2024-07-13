@@ -14,7 +14,12 @@
 	<meta name="google-signin-client_id" content="784669840257-i0a06p3o6g8k0k1tk26jj09li1q2acud.apps.googleusercontent.com">
 	<script async defer>
 		function pageInit() {
-			document.querySelector('h1#title').innerText = document.title.replace(/ ?\|.*/, '').trim();
+			let obj = [];
+			try { document.querySelector('#title').remove(); } catch (error) {}
+			obj[0] = document.createElement('h1');
+			obj[0].id='title';
+			obj[0].innerText = document.title.replace(/ ?\|.*/, '').trim();
+			document.body.prepend(obj[0]);
 		}
 		function setMenuBarCURRENTDATE(params) {
 			params.hour = parseInt(params.hour);
@@ -236,7 +241,6 @@
 		<div id="current_datetime"></div>
 	</div>
 	<div id="wrap_main">
-		<h1 id="title"></h1>
 		<div id="googleapi_identity_authn"></div>
 		<div id="selectCategory"></div>
 	</div>
