@@ -20,21 +20,25 @@
 			params.hour = parseInt(params.hour);
 			document.querySelector('#current_datetime').innerHTML  = `${params.hour}:${params.minute}:${params.second}`;
 		}
-		function setMenuBarPAGEHASH() {
+		async function setMenuBarPAGEHASH() {
 			fetch('./', {
 				method: 'get',
 			})
 			.then(r=>r.text())
 			.then(r=>{
-				let params = hash_encode(r, 'SHA-1');
+				new Promise((resolve, reject)=>{
+					let params = hash_encode(r, 'SHA-1');
 
-				if (document.querySelector('#pages_hashtext') !== null) {
-					document.querySelector('#pages_hashtext').remove();
-				}
-				let obj = document.createElement('div');
-				obj.id='pages_hashtext';
-				obj.innerText=`${params}`;
-				document.querySelector('#current_datetime').after(obj);
+					if (document.querySelector('#pages_hashtext') !== null) {
+						document.querySelector('#pages_hashtext').remove();
+					}
+					let obj = document.createElement('div');
+					obj.id='pages_hashtext';
+					obj.innerText=`${params}`;
+					document.querySelector('#current_datetime').after(obj);
+
+					resolve();
+				})
 			})
 		}
 		function onSignIn(googleUser) {
