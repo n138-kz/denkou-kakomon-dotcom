@@ -42,6 +42,7 @@
 		}
 		function googleauthInit() {
 			let interval = setInterval(()=>{
+				if ( ( document.querySelectorAll('.g_id_signin iframe').length > 0 ) ) { clearInterval(interval); }
 				let g_id_signin = document.querySelectorAll('.g_id_signin_onload');
 				try { Array.from(g_id_signin).map(e=>e.remove()); } catch (error) {}
 				g_id_signin = document.createElement('div');
@@ -78,9 +79,7 @@
 				g_id_onload.dataset.auto_select='true';
 				g_id_onload.dataset.itp_support='true';
 				document.querySelector('#wrap_side').appendChild(g_id_onload);
-				if ( ( document.querySelectorAll('.g_id_signin iframe').length > 0 ) ) {
-					clearInterval(interval);
-				}
+				if ( ( document.querySelectorAll('.g_id_signin iframe').length > 0 ) ) { clearInterval(interval); }
 			}, 1000);
 		}
 	</script>
