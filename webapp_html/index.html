@@ -103,6 +103,7 @@
 				obj = [];
 				obj[0] = document.createElement('input');
 				obj[0].type = 'button';
+				obj[0].id = 'checkDebkou1allSelect';
 				obj[0].value = '第一種電気工事士のみ';
 				/*
 				try { Array.from( document.querySelectorAll('input[name^="1"]') ).map(e=>e.checked = true);  } catch (error) {}
@@ -111,14 +112,17 @@
 				document.querySelector('#selectCategory').appendChild(obj[0]);
 				obj[0] = document.createElement('input');
 				obj[0].type = 'button';
+				obj[0].id = 'checkDebkou2allSelect';
 				obj[0].value = '第二種電気工事士のみ';
 				document.querySelector('#selectCategory').appendChild(obj[0]);
 				obj[0] = document.createElement('input');
 				obj[0].type = 'button';
+				obj[0].id = 'checkallSelect';
 				obj[0].value = '全選択';
 				document.querySelector('#selectCategory').appendChild(obj[0]);
 				obj[0] = document.createElement('input');
 				obj[0].type = 'button';
+				obj[0].id = 'checkallUnSelect';
 				obj[0].value = '全選択解除';
 				document.querySelector('#selectCategory').appendChild(obj[0]);
 	
