@@ -75,10 +75,11 @@
 				denkou 2: 2
 				all on  : 3
 			*/
+			console.debug(`params: ${params}`);
 			try { Array.from( document.querySelectorAll('input[name^="1"]') ).map(e=>e.checked = false); } catch (error) {}
 			try { Array.from( document.querySelectorAll('input[name^="2"]') ).map(e=>e.checked = false); } catch (error) {}
-			if (params&&1==1) { try { Array.from( document.querySelectorAll('input[name^="1"]') ).map(e=>e.checked = true);  } catch (error) {} }
-			if (params&&2==2) { try { Array.from( document.querySelectorAll('input[name^="2"]') ).map(e=>e.checked = true);  } catch (error) {} }
+			if ((params&1)==1) { try { Array.from( document.querySelectorAll('input[name^="1"]') ).map(e=>e.checked = true);  } catch (error) {} }
+			if ((params&2)==2) { try { Array.from( document.querySelectorAll('input[name^="2"]') ).map(e=>e.checked = true);  } catch (error) {} }
 		}
 		function getMondaiAllCategory() {
 			document.querySelector('#selectCategory').innerHTML = '';
