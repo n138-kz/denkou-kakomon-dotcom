@@ -11,7 +11,7 @@ function getCurrentTime() {
     }
     return datetime;
 }
-async function hash_encode(encode='SHA-256', text='') {
+async function hash_encode(text='', encode='SHA-256') {
     /**
     * @docs
         https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
