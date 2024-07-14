@@ -57,3 +57,10 @@ function getBase64(file) {
         console.log('Error: ', error);
     };
 }
+function getRTT() {
+    let time_init = new Date().getTime()/1000;
+    fetch('.').then(r=>r.text())
+    .then(r=>{
+        document.querySelector('#rtt_result').innerText = ((new Date().getTime()/1000) - time_init);
+    })
+}
