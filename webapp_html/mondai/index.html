@@ -180,8 +180,22 @@
 
 			obj[4] = document.createElement('tr');
 			obj[5] = document.createElement('th');
+			obj[5].innerText = '解答選択肢';
 			obj[4].appendChild(obj[5]);
 			obj[5] = document.createElement('td');
+			obj[6] = document.createElement('ol');
+			for (let index = 1; index <= 4; index++) {
+				obj[7] = document.createElement('li');
+				obj[8] = document.createElement('textarea');
+				obj[8].style.display = 'flex';
+				obj[7].appendChild(obj[8]);
+				obj[8] = document.createElement('input');
+				obj[8].type = 'file';
+				obj[8].accept = 'image/*';
+				obj[7].appendChild(obj[8]);
+				obj[6].appendChild(obj[7]);
+			}
+			obj[5].appendChild(obj[6]);
 			obj[4].appendChild(obj[5]);
 			obj[3].appendChild(obj[4]);
 
