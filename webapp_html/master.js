@@ -61,6 +61,10 @@ function getRTT() {
     let time_init = new Date().getTime()/1000;
     fetch('.').then(r=>r.text())
     .then(r=>{
-        document.querySelector('#rtt_result').innerText = ((new Date().getTime()/1000) - time_init);
+        let result = ((new Date().getTime()/1000) - time_init);
+        result = result * 1000;
+        result = parseInt(result);
+        result = `ping ${result}ms`;
+        document.querySelector('#rtt_result').innerText = result;
     })
 }
