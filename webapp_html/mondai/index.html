@@ -153,7 +153,6 @@
 			.then(r=>{
 				r.map((e1)=>{
 					obj[12] = document.createElement('option');
-					console.log(e1);
 					obj[12].innerText = `${e1.uuid} ${e1.name}`;
 					obj[12].value = e1.uuid;
 					obj[11].appendChild(obj[12]);
