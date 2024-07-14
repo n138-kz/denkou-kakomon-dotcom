@@ -16,7 +16,10 @@
 			try { document.querySelector('#title').remove(); } catch (error) {}
 			obj[0] = document.createElement('h1');
 			obj[0].id='title';
-			obj[0].innerText = document.title.replace(/ ?\|.*/, '').trim();
+			obj[1] = document.createElement('a');
+			obj[1].href = '..';
+			obj[1].innerText = document.title.replace(/ ?\|.*/, '').trim();
+			obj[0].appendChild(obj[1]);
 			document.body.prepend(obj[0]);
 		}
 		function setMenuBarCURRENTDATE(params) {
