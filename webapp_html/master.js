@@ -46,3 +46,14 @@ function insertLastElement() {
     } )
     document.body.appendChild(domLastElement);
 }
+function getBase64(file) {
+    /* https://stackoverflow.com/questions/36280818/how-to-convert-file-to-base64-in-javascript */
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+        console.log(reader.result);
+    };
+    reader.onerror = function (error) {
+        console.log('Error: ', error);
+    };
+}
