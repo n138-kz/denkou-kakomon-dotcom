@@ -165,8 +165,16 @@
 
 			obj[4] = document.createElement('tr');
 			obj[5] = document.createElement('th');
+			obj[5].innerText = '問題内容';
 			obj[4].appendChild(obj[5]);
 			obj[5] = document.createElement('td');
+			obj[6] = document.createElement('textarea');
+			obj[6].style.display = 'flex';
+			obj[5].appendChild(obj[6]);
+			obj[6] = document.createElement('input');
+			obj[6].type = 'file';
+			obj[6].accept = 'image/*';
+			obj[5].appendChild(obj[6]);
 			obj[4].appendChild(obj[5]);
 			obj[3].appendChild(obj[4]);
 
