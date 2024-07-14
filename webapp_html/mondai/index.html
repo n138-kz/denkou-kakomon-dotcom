@@ -163,6 +163,27 @@
 			obj[7].appendChild(obj[8]);
 			obj[6].appendChild(obj[7]);
 			obj[5].appendChild(obj[6]);
+			try {
+				obj[6] = document.createElement('code');
+				/*
+				* mondaiAdd_uuid
+				* mondaiAdd_kakomontype
+				* mondaiAdd_kakomonYear
+				* mondaiAdd_kakomonMonth
+				* mondaiAdd_kakomonAmPm
+				* mondaiAdd_kakomonBangou
+				* mondaiAdd_kakomonGenre
+				*/
+				let mondaiAdd_kakomontype   = document.querySelector('#mondaiAdd_kakomontype');   mondaiAdd_kakomontype   = '1';
+				let mondaiAdd_kakomonYear   = document.querySelector('#mondaiAdd_kakomonYear');   mondaiAdd_kakomonYear   = (''+(new Date().getFullYear()));
+				let mondaiAdd_kakomonMonth  = document.querySelector('#mondaiAdd_kakomonMonth');  mondaiAdd_kakomonMonth  = ('00'+(new Date().getMonth()+1)).substr(-2);
+				let mondaiAdd_kakomonAmPm   = document.querySelector('#mondaiAdd_kakomonAmPm');   mondaiAdd_kakomonAmPm   = '01';
+				let mondaiAdd_kakomonBangou = document.querySelector('#mondaiAdd_kakomonBangou'); mondaiAdd_kakomonBangou = '01';
+				let mondaiAdd_kakomonGenre  = document.querySelector('#mondaiAdd_kakomonGenre');  mondaiAdd_kakomonGenre  = '06';
+				obj[6].id = 'mondaiAdd_uuid';
+				obj[6].innerText = `${mondaiAdd_kakomontype}${mondaiAdd_kakomonGenre}${mondaiAdd_kakomonYear}${mondaiAdd_kakomonMonth}${mondaiAdd_kakomonAmPm}${mondaiAdd_kakomonBangou}`;
+				obj[5].appendChild(obj[6]);
+			} catch (error) { console.error(error); }
 			obj[4].appendChild(obj[5]);
 
 			obj[3].appendChild(obj[4]);
