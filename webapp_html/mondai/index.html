@@ -233,6 +233,10 @@
 			obj[6].type = 'file';
 			obj[6].accept = 'image/*';
 			obj[5].appendChild(obj[6]);
+			obj[6] = document.createElement('input');
+			obj[6].type = 'button';
+			obj[6].value = '追加';
+			obj[5].appendChild(obj[6]);
 			obj[4].appendChild(obj[5]);
 			obj[3].appendChild(obj[4]);
 
@@ -258,6 +262,10 @@
 				obj[8].id = 'mondaiAdd_kaitouBinary';
 				obj[8].type = 'file';
 				obj[8].accept = 'image/*';
+				obj[7].appendChild(obj[8]);
+				obj[8] = document.createElement('input');
+				obj[8].type = 'button';
+				obj[8].value = '追加';
 				obj[7].appendChild(obj[8]);
 				obj[6].appendChild(obj[7]);
 			}
