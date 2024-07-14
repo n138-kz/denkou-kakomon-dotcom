@@ -46,3 +46,16 @@ function insertLastElement() {
     } )
     document.body.appendChild(domLastElement);
 }
+function registEventListenerTag(params='') {
+	window.addEventListener('DOMContentLoaded', ()=>{
+		let element = document.body;
+		element = document.querySelector(params);
+		element.addEventListener('click', (e1)=>{
+			try {
+				e1.select();
+			} catch (error) { console.error( error ); }
+		});
+	});
+}
+registEventListenerTag('code');
+
