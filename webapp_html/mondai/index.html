@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>電工過去問.com | n138.jp</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="../master.css">
+	<script src="../master.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LfCHdcUAAAAAOwkHsW_7W7MfoOrvoIw9CXdLRBA"></script>
+	<script async defer>
+		function pageInit() {
+			let obj = [];
+			try { document.querySelector('#title').remove(); } catch (error) {}
+			obj[0] = document.createElement('h1');
+			obj[0].id='title';
+			obj[0].innerText = document.title.replace(/ ?\|.*/, '').trim();
+			document.body.prepend(obj[0]);
+		}
+		function setMenuBarCURRENTDATE(params) {
+			params.hour = parseInt(params.hour);
+			document.querySelector('#current_datetime').innerHTML  = `${params.hour}:${params.minute}:${params.second}`;
+		}
+	</script>
+	<script>
+		function showMondai_addform() {
+			let obj = [];
+			obj[0] = document.createElement('div');
+			obj[1] = document.createElement('form');
+
+			obj[2] = document.createElement('h2');
+			obj[2].innerText = '問題登録フォーム';
+			obj[1].appendChild(obj[2]);
+
+			obj[2] = document.createElement('table');
+			obj[2].border=1;
+			obj[3] = document.createElement('tbody');
+			obj[4] = document.createElement('tr');
+
+			obj[5] = document.createElement('th');
+			obj[5].innerText = '問題番号';
+			obj[4].appendChild(obj[5]);
+			obj[5] = document.createElement('td');
+			obj[6] = document.createElement('table');
+			obj[7] = document.createElement('thead');
+			obj[8] = document.createElement('tr');
+			obj[10] = ['試験種別','試験実施年度','試験実施月','試験実施時間','試験番号', '問題ジャンル'];
+			for (let index = 0; index < obj[10].length; index++) {
+				obj[9] = document.createElement('th');
+				obj[9].innerText = obj[10][index];
+				obj[8].appendChild(obj[9]);
+			}
+			obj[7].appendChild(obj[8]);
+			obj[8] = document.createElement('tr');
+			
+			obj[9] = document.createElement('td');
+			obj[10] = document.createElement('select');
+			obj[10].name = '';
+			obj[11] = document.createElement('option');
+			obj[11].innerText = '第一種電気工事士';
+			obj[11].value = '100';
+			obj[10].appendChild(obj[11]);
+			obj[11] = document.createElement('option');
+			obj[11].innerText = '第二種電気工事士';
+			obj[11].value = '200';
+			obj[10].appendChild(obj[11]);
+			obj[9].appendChild(obj[10]);
+			obj[8].appendChild(obj[9]);
+
+			obj[9] = document.createElement('td');
+			obj[10] = document.createElement('select');
+			obj[10].name = '';
+			for (let index = (new Date().getFullYear()); index >= (new Date().getFullYear())-10; index--) {
+				obj[11] = document.createElement('option');
+				obj[11].innerText = `${index}年`;
+				obj[11].value = index;
+				obj[10].appendChild(obj[11]);
+			}
+			obj[9].appendChild(obj[10]);
+			obj[8].appendChild(obj[9]);
+
+			obj[9] = document.createElement('td');
+			obj[10] = document.createElement('select');
+			obj[10].name = '';
+			for (let index = 1; index <= 12; index++) {
+				obj[11] = document.createElement('option');
+				obj[11].innerText = `${index}月`;
+				obj[11].value = index;
+				obj[10].appendChild(obj[11]);
+			}
+			obj[9].appendChild(obj[10]);
+			obj[8].appendChild(obj[9]);
+
+			obj[9] = document.createElement('td');
+			obj[10] = document.createElement('select');
+			obj[10].name = '';
+			obj[12] = [['午前','01'],['午後','02']];
+			for (let index = 0; index < obj[12].length; index++) {
+				obj[11] = document.createElement('option');
+				obj[11].innerText = obj[12][index][0];
+				obj[11].value = obj[12][index][1];
+				obj[10].appendChild(obj[11]);
+			}
+			obj[9].appendChild(obj[10]);
+			obj[8].appendChild(obj[9]);
+
+			obj[9] = document.createElement('td');
+			obj[10] = document.createElement('select');
+			obj[10].name = '';
+			obj[11] = document.createElement('optgroup');
+			obj[11].label = '知識';
+			for (let index = 1; index <= 30; index++) {
+				obj[12] = document.createElement('option');
+				obj[12].innerText = index;
+				obj[12].value = index;
+				obj[11].appendChild(obj[12]);
+			}
+			obj[10].appendChild(obj[11]);
+			obj[11] = document.createElement('optgroup');
+			obj[11].label = '配線図';
+			for (let index = 31; index <= 50; index++) {
+				obj[12] = document.createElement('option');
+				obj[12].innerText = index;
+				obj[12].value = index;
+				obj[11].appendChild(obj[12]);
+			}
+			obj[10].appendChild(obj[11]);
+			obj[9].appendChild(obj[10]);
+			obj[8].appendChild(obj[9]);
+
+			obj[9] = document.createElement('td');
+			obj[10] = document.createElement('select');
+			obj[10].name = '';
+			obj[11] = document.createElement('optgroup');
+			obj[11].label = '';
+			fetch('../getMondaiCategory.json', { method: 'get', })
+			.then(r=>r.json())
+			.then(r=>{console.debug(r); return r;})
+			.then(r=>{
+				r.map((e1)=>{
+					obj[12] = document.createElement('option');
+					console.log(e1);
+					obj[12].innerText = `${e1.uuid} ${e1.name}`;
+					obj[12].value = e1.uuid;
+					obj[11].appendChild(obj[12]);
+				});
+			})
+			.catch(r=>{
+				console.error(r);
+			})
+			obj[10].appendChild(obj[11]);
+			obj[9].appendChild(obj[10]);
+			obj[8].appendChild(obj[9]);
+
+			obj[7].appendChild(obj[8]);
+			obj[6].appendChild(obj[7]);
+			obj[5].appendChild(obj[6]);
+			obj[4].appendChild(obj[5]);
+			
+			obj[3].appendChild(obj[4]);
+			obj[2].appendChild(obj[3]);
+			obj[1].appendChild(obj[2]);
+
+			obj[0].appendChild(obj[1]);
+			document.querySelector('#wrap_main').appendChild(obj[0]);
+		}
+	</script>
+	<script>
+		window.addEventListener('DOMContentLoaded', ()=>{
+			pageInit();
+			insertFavicon();
+			insertLastElement();
+			setTimeout(()=>{
+				showMondai_addform();
+			}, 500);
+			setInterval(() => {
+				setMenuBarCURRENTDATE( getCurrentTime()[0] );
+			}, 100);
+		});
+	</script>
+	<style>
+		#wrap_side {
+			width: 150px;
+			margin: 0 auto;
+			z-index: 1;
+			text-align: center;
+		}
+		@media screen and (min-device-width: 480px) {
+			#wrap_side {
+				/* for big screen(i.e. pc) */
+				float: left;
+				height: 100%;
+				margin: auto;
+			}
+			#wrap_main {
+				margin-left: 150px;
+			}
+		}
+		.focus_pointer {
+			cursor: pointer;
+			user-select: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap_side">
+		<div id="current_datetime"></div>
+	</div>
+	<div id="wrap_main"></div>
+</body>
+</html>
