@@ -212,6 +212,10 @@
 			obj[6] = document.createElement('ol');
 			for (let index = 1; index <= 4; index++) {
 				obj[7] = document.createElement('li');
+				obj[8] = document.createElement('input');
+				obj[8].type = 'radio';
+				obj[8].name = 'mondaiAdd_kotae';
+				obj[7].appendChild(obj[8]);
 				obj[8] = document.createElement('textarea');
 				obj[8].style.display = 'flex';
 				obj[8].id = 'mondaiAdd_kaitouText';
