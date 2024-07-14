@@ -96,7 +96,7 @@
 			for (let index = 1; index <= 12; index++) {
 				obj[11] = document.createElement('option');
 				obj[11].innerText = `${index}月`;
-				obj[11].value = index;
+				obj[11].value = ('00'+index).substr(-2);
 				obj[10].appendChild(obj[11]);
 			}
 			obj[9].appendChild(obj[10]);
@@ -125,7 +125,7 @@
 			for (let index = 1; index <= 30; index++) {
 				obj[12] = document.createElement('option');
 				obj[12].innerText = index;
-				obj[12].value = index;
+				obj[12].value = ('00'+index).substr(-2);
 				obj[11].appendChild(obj[12]);
 			}
 			obj[10].appendChild(obj[11]);
@@ -134,7 +134,7 @@
 			for (let index = 31; index <= 50; index++) {
 				obj[12] = document.createElement('option');
 				obj[12].innerText = index;
-				obj[12].value = index;
+				obj[12].value = ('00'+index).substr(-2);
 				obj[11].appendChild(obj[12]);
 			}
 			obj[10].appendChild(obj[11]);
@@ -270,7 +270,7 @@
 							Month : document.querySelector('#mondaiAdd_kakomonMonth').value,
 							AmPm  : document.querySelector('#mondaiAdd_kakomonAmPm').value,
 							Bangou: document.querySelector('#mondaiAdd_kakomonBangou').value,
-							Genre : document.querySelector('#mondaiAdd_kakomonGenre').value,
+							Genre : document.querySelector('#mondaiAdd_kakomonGenre').value.substr(1,2),
 						},
 					}
 					console.log(mondaiAdd_kakomon);
