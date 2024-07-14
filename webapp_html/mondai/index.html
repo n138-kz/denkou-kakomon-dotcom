@@ -58,6 +58,7 @@
 			obj[9] = document.createElement('td');
 			obj[10] = document.createElement('select');
 			obj[10].name = '';
+			obj[10].id = 'mondaiAdd_kakomontype';
 			obj[11] = document.createElement('option');
 			obj[11].innerText = '第一種電気工事士';
 			obj[11].value = '100';
@@ -72,6 +73,7 @@
 			obj[9] = document.createElement('td');
 			obj[10] = document.createElement('select');
 			obj[10].name = '';
+			obj[10].id = 'mondaiAdd_kakomonYear';
 			for (let index = (new Date().getFullYear()); index >= (new Date().getFullYear())-10; index--) {
 				obj[11] = document.createElement('option');
 				obj[11].innerText = `${index}年`;
@@ -84,6 +86,7 @@
 			obj[9] = document.createElement('td');
 			obj[10] = document.createElement('select');
 			obj[10].name = '';
+			obj[10].id = 'mondaiAdd_kakomonMonth';
 			for (let index = 1; index <= 12; index++) {
 				obj[11] = document.createElement('option');
 				obj[11].innerText = `${index}月`;
@@ -96,6 +99,7 @@
 			obj[9] = document.createElement('td');
 			obj[10] = document.createElement('select');
 			obj[10].name = '';
+			obj[10].id = 'mondaiAdd_kakomonAmPm';
 			obj[12] = [['午前','01'],['午後','02']];
 			for (let index = 0; index < obj[12].length; index++) {
 				obj[11] = document.createElement('option');
@@ -109,6 +113,7 @@
 			obj[9] = document.createElement('td');
 			obj[10] = document.createElement('select');
 			obj[10].name = '';
+			obj[10].id = 'mondaiAdd_kakomonBangou';
 			obj[11] = document.createElement('optgroup');
 			obj[11].label = '知識';
 			for (let index = 1; index <= 30; index++) {
@@ -133,6 +138,7 @@
 			obj[9] = document.createElement('td');
 			obj[10] = document.createElement('select');
 			obj[10].name = '';
+			obj[10].id = 'mondaiAdd_kakomonGenre';
 			obj[11] = document.createElement('optgroup');
 			obj[11].label = '';
 			fetch('../getMondaiCategory.json', { method: 'get', })
