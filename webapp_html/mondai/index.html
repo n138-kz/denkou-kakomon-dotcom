@@ -179,12 +179,12 @@
 				* mondaiAdd_kakomonBangou
 				* mondaiAdd_kakomonGenre
 				*/
-				let mondaiAdd_kakomonType   = document.querySelector('#mondaiAdd_kakomonType');   mondaiAdd_kakomonType   = '1';
-				let mondaiAdd_kakomonYear   = document.querySelector('#mondaiAdd_kakomonYear');   mondaiAdd_kakomonYear   = (''+(new Date().getFullYear()));
-				let mondaiAdd_kakomonMonth  = document.querySelector('#mondaiAdd_kakomonMonth');  mondaiAdd_kakomonMonth  = ('00'+(new Date().getMonth()+1)).substr(-2);
-				let mondaiAdd_kakomonAmPm   = document.querySelector('#mondaiAdd_kakomonAmPm');   mondaiAdd_kakomonAmPm   = '01';
-				let mondaiAdd_kakomonBangou = document.querySelector('#mondaiAdd_kakomonBangou'); mondaiAdd_kakomonBangou = '01';
-				let mondaiAdd_kakomonGenre  = document.querySelector('#mondaiAdd_kakomonGenre');  mondaiAdd_kakomonGenre  = '06';
+				let mondaiAdd_kakomonType   = '1';
+				let mondaiAdd_kakomonYear   = (''+(new Date().getFullYear()));
+				let mondaiAdd_kakomonMonth  = ('00'+(new Date().getMonth()+1)).substr(-2);
+				let mondaiAdd_kakomonAmPm   = '01';
+				let mondaiAdd_kakomonBangou = '01';
+				let mondaiAdd_kakomonGenre  = '06';
 				obj[6].id = 'mondaiAdd_uuid';
 				obj[6].innerText = `${mondaiAdd_kakomonType}${mondaiAdd_kakomonGenre}${mondaiAdd_kakomonYear}${mondaiAdd_kakomonMonth}${mondaiAdd_kakomonAmPm}${mondaiAdd_kakomonBangou}`;
 				obj[5].appendChild(obj[6]);
