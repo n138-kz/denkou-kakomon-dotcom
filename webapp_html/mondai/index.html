@@ -77,7 +77,7 @@
 			obj[9] = document.createElement('td');
 			obj[10] = document.createElement('select');
 			obj[10].name = '';
-			obj[10].id = 'mondaiAdd_kakomontype';
+			obj[10].id = 'mondaiAdd_kakomonType';
 			obj[11] = document.createElement('option');
 			obj[11].innerText = '第一種電気工事士';
 			obj[11].value = '100';
@@ -186,21 +186,21 @@
 				obj[6] = document.createElement('code');
 				/*
 				* mondaiAdd_uuid
-				* mondaiAdd_kakomontype
+				* mondaiAdd_kakomonType
 				* mondaiAdd_kakomonYear
 				* mondaiAdd_kakomonMonth
 				* mondaiAdd_kakomonAmPm
 				* mondaiAdd_kakomonBangou
 				* mondaiAdd_kakomonGenre
 				*/
-				let mondaiAdd_kakomontype   = document.querySelector('#mondaiAdd_kakomontype');   mondaiAdd_kakomontype   = '1';
+				let mondaiAdd_kakomonType   = document.querySelector('#mondaiAdd_kakomonType');   mondaiAdd_kakomonType   = '1';
 				let mondaiAdd_kakomonYear   = document.querySelector('#mondaiAdd_kakomonYear');   mondaiAdd_kakomonYear   = (''+(new Date().getFullYear()));
 				let mondaiAdd_kakomonMonth  = document.querySelector('#mondaiAdd_kakomonMonth');  mondaiAdd_kakomonMonth  = ('00'+(new Date().getMonth()+1)).substr(-2);
 				let mondaiAdd_kakomonAmPm   = document.querySelector('#mondaiAdd_kakomonAmPm');   mondaiAdd_kakomonAmPm   = '01';
 				let mondaiAdd_kakomonBangou = document.querySelector('#mondaiAdd_kakomonBangou'); mondaiAdd_kakomonBangou = '01';
 				let mondaiAdd_kakomonGenre  = document.querySelector('#mondaiAdd_kakomonGenre');  mondaiAdd_kakomonGenre  = '06';
 				obj[6].id = 'mondaiAdd_uuid';
-				obj[6].innerText = `${mondaiAdd_kakomontype}${mondaiAdd_kakomonGenre}${mondaiAdd_kakomonYear}${mondaiAdd_kakomonMonth}${mondaiAdd_kakomonAmPm}${mondaiAdd_kakomonBangou}`;
+				obj[6].innerText = `${mondaiAdd_kakomonType}${mondaiAdd_kakomonGenre}${mondaiAdd_kakomonYear}${mondaiAdd_kakomonMonth}${mondaiAdd_kakomonAmPm}${mondaiAdd_kakomonBangou}`;
 				obj[5].appendChild(obj[6]);
 			} catch (error) { console.error(error); }
 			obj[4].appendChild(obj[5]);
