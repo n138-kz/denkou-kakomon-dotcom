@@ -55,6 +55,10 @@ code {
     background-color: silver;
     vertical-align: middle;
     font-family: "Myrica font", monospace;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 li {
     font-family: "Azuki font";
