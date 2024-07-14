@@ -183,10 +183,8 @@
 		}
 	</script>
 	<script>
-		let element = document.body;
 		window.addEventListener('DOMContentLoaded', ()=>{
-			element = document.querySelector('#selectCategory');
-			element.addEventListener('click', (e1)=>{
+			document.querySelector('#selectCategory').addEventListener('click', (e1)=>{
 				if ( e1.target.tagName.toLowerCase() === 'input' ) {
 					let selectCategoryCount = 0;
 					Array.from( document.querySelectorAll('#selectCategory input:checked') ).map((e2)=>{
