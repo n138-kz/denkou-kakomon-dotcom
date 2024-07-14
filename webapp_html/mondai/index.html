@@ -26,6 +26,25 @@
 			params.hour = parseInt(params.hour);
 			document.querySelector('#current_datetime').innerHTML  = `${params.hour}:${params.minute}:${params.second}`;
 		}
+		function handleOrientation (event) {
+			const absolute = event.absolute;
+			const alpha = event.alpha;
+			const beta = event.beta;
+			const gamma = event.gamma;
+			console.log( {
+				absolute: absolute,
+				alpha: alpha,
+				beta: beta,
+				gamma: gamma,
+			} );
+			window.alert( JSON.stringify( {
+				absolute: absolute,
+				alpha: alpha,
+				beta: beta,
+				gamma: gamma,
+			} ) );
+		}
+		window.addEventListener("deviceorientation", handleOrientation, true);
 	</script>
 	<script>
 		function showMondai_addform() {
