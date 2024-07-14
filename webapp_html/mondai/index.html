@@ -250,6 +250,36 @@
 
 			obj[0].appendChild(obj[1]);
 			document.querySelector('#wrap_main').appendChild(obj[0]);
+			eventHundler_mondaiAdd_uuid_inputTable();
+		}
+		function eventHundler_mondaiAdd_uuid_inputTable() {
+			const handler = (e1)=>{
+				if ( e1.target.tagName.toLowerCase() === 'select' ) {
+					let mondaiAdd_kakomon = {
+						object: {
+							Type  : document.querySelector('#mondaiAdd_kakomonType'),
+							Year  : document.querySelector('#mondaiAdd_kakomonYear'),
+							Month : document.querySelector('#mondaiAdd_kakomonMonth'),
+							AmPm  : document.querySelector('#mondaiAdd_kakomonAmPm'),
+							Bangou: document.querySelector('#mondaiAdd_kakomonBangou'),
+							Genre : document.querySelector('#mondaiAdd_kakomonGenre'),
+						},
+						value: {
+							Type  : document.querySelector('#mondaiAdd_kakomonType').value,
+							Year  : document.querySelector('#mondaiAdd_kakomonYear').value,
+							Month : document.querySelector('#mondaiAdd_kakomonMonth').value,
+							AmPm  : document.querySelector('#mondaiAdd_kakomonAmPm').value,
+							Bangou: document.querySelector('#mondaiAdd_kakomonBangou').value,
+							Genre : document.querySelector('#mondaiAdd_kakomonGenre').value,
+						},
+					}
+					console.log(mondaiAdd_kakomon);
+				}
+			}
+			try {
+				document.querySelector('#mondaiAdd_uuid_inputTable').removeEventListener('click', handler);
+			} catch (error) { console.error(error); }
+			document.querySelector('#mondaiAdd_uuid_inputTable').addEventListener('click', handler);
 		}
 	</script>
 	<script>
