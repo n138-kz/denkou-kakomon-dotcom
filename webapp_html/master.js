@@ -59,7 +59,7 @@ function getBase64(file) {
 }
 function getRTT() {
     let time_init = new Date().getTime()/1000;
-    fetch('.').then(r=>r.text())
+    fetch('.', {method: 'head'}).then(r=>r.text())
     .then(r=>{
         let result = ((new Date().getTime()/1000) - time_init);
         result = result * 1000;
